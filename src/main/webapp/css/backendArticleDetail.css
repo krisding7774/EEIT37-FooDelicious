@@ -1,0 +1,53 @@
+@charset "BIG5";
+
+.littleName{
+    color: #D3B884;
+}
+
+.main{
+    margin: auto;
+    margin-top: 40px;
+    width: 650px;
+    min-width: 650px;
+
+}
+form{
+    border-radius: 50px;
+    box-shadow: 2px 5px 5px 0px gray;
+}
+
+
+.textSet{
+    vertical-align: middle;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.textArea{
+    margin: 10px;
+    text-align: left;
+}
+
+.content{
+    padding-top: 10px;
+    text-align:left;
+
+}
+
+.textArea{
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.buttonArea{
+    margin-top: 50px;
+}
+
+#cancel{
+    box-shadow: 2px 5px 5px 0px gray;
+}
+
+#delBtn{
+    box-shadow: 2px 5px 5px 0px gray;
+}

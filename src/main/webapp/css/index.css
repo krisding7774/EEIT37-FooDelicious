@@ -1,0 +1,234 @@
+*{
+    position: relative;
+}
+
+.topPhoto{
+    position: relative;
+}
+
+
+.headPho {
+    width: 100%;
+}
+
+.textArea{
+    font-family: 'The Nautigal', cursive;
+    position: absolute;
+    top: 18%;
+    left: 60%;
+
+}
+.textAreaTxt{
+    font-family: 'The Nautigal', cursive;
+    font-size: 800%;
+    color: #D3B884;
+
+}
+
+.textSet{
+    text-align: center;
+    font-size: 150px;
+    padding: 50px ;
+}
+
+.month-specials{
+    padding: 0;
+
+}
+
+.menu-section{
+    width: 100%;
+}
+
+.productBox{
+    margin: auto;
+    width: 1500px;
+}
+
+.productArea{
+    background-color: #F4F4F4;
+    padding-bottom: 100px;
+}
+
+.hotTopicArea{
+    margin: auto;
+    width: 1500px;
+    font-size: 20px;
+}
+
+.articleArea{
+
+    height: 900px;
+}
+
+.menu-navigation li a{
+    font-size: 36px;
+    font-family: 'The Nautigal', cursive;
+}
+
+table{
+    border: solid 1px gray;
+
+}
+
+.active{
+    border: solid 2px #D3B884;
+}
+
+/*下面是回報區的css*/
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+label {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px;
+    position: center;
+}
+
+input[type=reset] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 15px;
+    position: center;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+input[type=radio] {
+    width: 20px;
+    height: 20px;
+}
+
+.container {
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: center;
+}
+
+.form {
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: center;
+}
+
+.custom-control-label {
+    font-weight: normal;
+    padding: 5px;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+/* Clear floats after the columns */
+.form:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-sm-10, .col-75, input[type=form] {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .topDIV {
+        margin-top: 16px;
+    }
+
+    .hero {
+        width: 80%;
+        height: 450px;
+        position: relative;
+        margin: 100px auto;
+    }
+
+    .btn-box {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .btn-box button {
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        margin-right: 50px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+/*上面是回報區的css*/
+
+
+.footArea{
+    position: relative;
+    background-image: url("../img/contact-bg2.jpg");
+    background-size: 120%;
+    background-position: 0px;
+    height: 963px;
+}
+
+.contactBox{
+    margin-left: 45%;
+    width: 800px;
+}
+
+select{
+    line-height: 16px;
+}
+
+.author{
+    margin-left: 45%;
+    font-size: 24px;
+
+}
+
+.arrowTop{
+    position: fixed;
+    right: 60px;
+    bottom: 150px;
+    font-size: 48px;
+    color: #D3B884;
+}
+
+.trHover:hover{
+    background-color: #ECEBEB;
+}
+
+.image-inline{
+    width: 50px;
+}

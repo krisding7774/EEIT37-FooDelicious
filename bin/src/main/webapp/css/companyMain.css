@@ -1,0 +1,157 @@
+
+
+:root{
+    --color_darkblue: #182740;
+    --color_gold: #D3B884;
+    --color_skyblue: #3c8dbc;
+    --color_blue: #367fa9;
+}
+
+.topBrand{
+    background-color:forestgreen;
+    height: 60px;
+    text-align: center;
+    padding-top: 10px;
+    
+}
+
+.brand{
+    color: white;
+    font-size: 30px;
+    padding-left: 0;
+    text-align: center;
+}
+
+.rightBrand{
+    background-color: #49CE3A;
+    height: 60px;
+}
+
+.leftBar{
+    background-color: #23651C;
+    height: 800px;
+    text-align:center;
+
+}
+
+.photo{
+    padding: 10px;
+    width: 120px;
+}
+
+.brandName{
+    color: var(--color_gold);
+    font-size: 30px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    
+}
+.col-fixed{
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 300px;
+}
+
+.list-group-item{
+	margin-top:10px;
+	border:none;
+}
+
+.row{
+    width: calc(100% - 300px);
+}
+
+
+.rightArea{
+    background-color: white;
+}
+
+.functionBar li{
+    background-color: transparent;    
+}
+
+.functionBar{
+    width: 280px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+span{
+    color: white;
+}
+span:hover{
+    color:var(--color_gold)
+}
+
+.colLi{
+    text-align: left;
+    color: white;
+
+}
+
+.btnBor{
+    border-color: transparent;
+}
+
+.ulArea{
+    margin-left: 80px;
+}
+
+.bg-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.logoutIcon{
+	
+	margin-top:130%;
+}
+
+.modal-contents {
+	height: 600px;
+	width: 600px;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+}
+
+input {
+	margin: 15px auto;
+	display: block;
+	width: 50%;
+	padding: 8px;
+	border: 1px solid gray;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	
+}
+
+
+/* companyProduct 樣式 */
+
+.tableName{
+	color:grey;
+}
+
+.smallFont{
+    color: #D3B884;
+    font-size:24px;
+}
+
+

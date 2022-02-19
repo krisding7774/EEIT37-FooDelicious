@@ -1,0 +1,177 @@
+*{
+    position: relative;
+}
+
+.topPhoto{
+    position: relative;
+}
+
+
+img {
+    width: 100%;
+}
+
+.textArea{
+    font-family: 'The Nautigal', cursive;
+    position: absolute;
+    top: 18%;
+    left: 60%;
+
+}
+.textAreaTxt{
+    font-family: 'The Nautigal', cursive;
+    font-size: 800%;
+    color: #D3B884;
+
+}
+
+.textSet{
+    text-align: center;
+    font-size: 150px;
+    padding: 50px ;
+}
+
+.month-specials{
+    padding: 0;
+
+}
+
+.menu-section{
+    width: 100%;
+}
+
+.productBox{
+    margin: auto;
+    width: 1500px;
+}
+
+.productArea{
+    background-color: #F4F4F4;
+    padding-bottom: 100px;
+}
+
+.hotTopicArea{
+    margin: auto;
+    width: 1500px;
+    font-size: 20px;
+}
+
+.articleArea{
+
+    height: 900px;
+}
+
+.menu-navigation li a{
+    font-size: 36px;
+    font-family: 'The Nautigal', cursive;
+}
+
+table{
+    border: solid 1px gray;
+
+}
+
+.active{
+    border: solid 2px #D3B884;
+}
+
+/*下面是回報區的css*/
+
+* {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: center;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+/*上面是回報區的css*/
+
+
+.footArea{
+    position: relative;
+    background-image: url("../img/contact-bg2.jpg");
+    background-size: 120%;
+    background-position: 0px;
+    height: 963px;
+}
+
+.contactBox{
+    margin-top: 8%;
+    margin-left: 45%;
+    width: 800px;
+}
+
+select{
+    line-height: 16px;
+}
+
+.author{
+    margin-left: 45%;
+    font-size: 24px;
+    position:absolute;
+    bottom: 0px;
+}
+
+.arrowTop{
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    font-size: 48px;
+    color: #D3B884;
+}
+
+.trHover:hover{
+    background-color: #ECEBEB;
+}

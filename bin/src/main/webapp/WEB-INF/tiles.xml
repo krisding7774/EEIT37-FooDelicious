@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="app.default"
+		template="/WEB-INF/layout/default.jsp">
+		<put-attribute name="title" value="spring boot demo" />
+	</definition>
+
+	<definition name="app.home" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/homepage/home.jsp" />
+	</definition>
+
+	<definition name="app.LoginSystem" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/LoginSystem.jsp" />
+	</definition>
+
+	<definition name="app.RegisterPage" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/RegisterPage.jsp" />
+	</definition>
+
+	<definition name="app.updatePage" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/updatePage.jsp" />
+	</definition>
+
+	<definition name="app.memberIndex" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/memberIndex.jsp" />
+	</definition>
+
+	<definition name="app.memberIndex1" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/memberIndex1.jsp" />
+	</definition>
+
+	<definition name="app.PostArticle" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/PostArticle.jsp" />
+	</definition>
+
+	<definition name="app.ShowAtricle" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/ShowAtricle.jsp" />
+	</definition>
+	
+	<definition name="app.userFocusePage" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/userFocusePage.jsp" />
+	</definition>
+
+	<definition name="app.ShareArea" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/ShareArea.jsp" />
+	</definition>
+
+	<definition name="app.UpdateArticle" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/UpdateArticle.jsp" />
+	</definition>
+
+	<definition name="app.CompanyDefault2"
+		template="/WEB-INF/compBackend/CompanyDefault.jsp">
+		<put-attribute name="title" value="backend main page" />
+	</definition>
+
+	<definition name="app.websocket" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/article/websocket.jsp" />
+	</definition>
+
+	<definition name="app.CompanyDefault"
+		template="/WEB-INF/companyBackend/CompanyDefault.jsp">
+		<put-attribute name="title" value="backend main page" />
+	</definition>
+
+	<definition name="app.CompanyMain2"
+		extends="app.CompanyDefault2">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/CompanyMain.jsp" />
+	</definition>
+
+	<definition name="app.CompanyProduct2"
+		extends="app.CompanyDefault2">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/CompanyProduct.jsp" />
+	</definition>
+
+	<definition name="app.CompanyProductUpdate"
+		extends="app.CompanyDefault2">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/CompanyProductUpdate.jsp" />
+	</definition>
+
+	<definition name="app.CompanyProductAdd"
+		extends="app.CompanyDefault2">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/CompanyProductAdd.jsp" />
+	</definition>
+
+	<definition name="app.CompanyOrder2"
+		extends="app.CompanyDefault2">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/CompanyOrder.jsp" />
+	</definition>
+
+	<definition name="app.Product" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/product/Product.jsp" />
+	</definition>
+
+	<definition name="app.ProductDetail" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/product/ProductDetail.jsp" />
+	</definition>
+
+	<definition name="app.BackendDefault"
+		template="/WEB-INF/backend/BackendDefault.jsp">
+		<put-attribute name="title" value="backend default" />
+	</definition>
+
+	<definition name="app.BackendMain"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/BackendMain.jsp" />
+	</definition>
+
+	<definition name="app.HesitantProduct"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/cart/hesitantProduct.jsp" />
+	</definition>
+
+	<definition name="app.ShoppingCart"
+		template="/WEB-INF/cart/shoppingCart.jsp">
+		<put-attribute name="title" value="/shoppingCart" />
+	</definition>
+
+	<definition name="app.Orders"
+		template="/WEB-INF/orders/orders.jsp">
+		<put-attribute name="title" value="/orders"></put-attribute>
+	</definition>
+
+	<definition name="app.OrdersEnd"
+		template="/WEB-INF/orders/ordersEnd.jsp">
+		<put-attribute name="title" value="/ordersEnd"></put-attribute>
+	</definition>
+
+	<definition name="app.ViewOrders" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/orders/viewOrders.jsp"></put-attribute>
+	</definition>
+
+	<definition name="app.CustService" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/custService/CustService.jsp" />
+	</definition>
+
+	<definition name="app.BackendProductAdd"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/productPage/BackendProductAdd.jsp" />
+	</definition>
+
+	<definition name="app.BackendMember"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/memberPage/BackendMember.jsp" />
+	</definition>
+
+	<definition name="app.CashflowList" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/cashflow/CashflowList.jsp" />
+	</definition>
+
+	<definition name="app.CashFlowAddress"
+		extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/cashflow/CashFlowAddress2.jsp" />
+	</definition>
+
+	<!-- <definition name="app.CashFlowAddress" -->
+	<!-- template="/WEB-INF/cashflow/CashFlowAddress.jsp"> -->
+	<!-- <put-attribute name="title" value="/CashFlowAddress" /> -->
+	<!-- </definition> -->
+
+	<definition name="app.BackendMemberUpdate"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/memberPage/BackendMemberUpdate.jsp" />
+	</definition>
+
+	<definition name="app.BackendManager"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/managerPage/BackendManager.jsp" />
+	</definition>
+
+	<definition name="app.BackendManagerUpdate"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/managerPage/BackendManagerUpdate.jsp" />
+	</definition>
+
+	<definition name="app.BackendProblemReport"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/BackendProblemReport.jsp" />
+	</definition>
+	
+	<definition name="app.BackendProblemReportUpdate"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/compBackend/BackendProblemReportUpdate.jsp" />
+	</definition>
+
+	<definition name="app.ListAllMembers" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/listAllMembers.jsp" />
+	</definition>
+
+	<definition name="app.pwdForgetPage" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/pwdForgetPage.jsp" />
+	</definition>
+
+	<definition name="app.pwdChange" extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/pwdChange.jsp" />
+	</definition>
+
+	<definition name="app.pwdForgetSuccess"
+		extends="app.default4">
+		<put-attribute name="content"
+			value="/WEB-INF/member/pwdForgetSuccess.jsp" />
+	</definition>
+
+	<definition name="app.BackendProduct"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/productPage/BackendProduct.jsp" />
+	</definition>
+
+	<definition name="app.BackendProductUpdate"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/productPage/BackendProductUpdate.jsp" />
+	</definition>
+
+	<definition name="app.BackendReportAge"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/reportPage/AgeDistribution.jsp" />
+	</definition>
+
+	<definition name="app.BackendOrder"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/orderPage/BackendOrder.jsp" />
+	</definition>
+
+	<definition name="app.BackendArticle"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/articlePage/BackendArticle.jsp" />
+	</definition>
+
+	<definition name="app.BackendArticleContent"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/articlePage/BackendArticleContent.jsp" />
+	</definition>
+
+	<definition name="app.BackendOrderUpdate"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/orderPage/BackendOrderUpdate.jsp" />
+	</definition>
+
+	<definition name="app.BackendReportProduct"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/reportPage/Bestseller.jsp" />
+	</definition>
+
+	<definition name="app.BackendReportArticle"
+		extends="app.BackendDefault">
+		<put-attribute name="content"
+			value="/WEB-INF/backend/reportPage/PopularArticles.jsp" />
+	</definition>
+
+	<definition name="app.default3"
+		template="/WEB-INF/layout/default3.jsp">
+		<put-attribute name="title" value="spring boot demo" />
+	</definition>
+
+	<definition name="app.index" extends="app.default3">
+		<put-attribute name="content"
+			value="/WEB-INF/homepage/index.jsp" />
+	</definition>
+
+	<definition name="app.default4"
+		template="/WEB-INF/layout/default4.jsp">
+		<put-attribute name="title" value="spring boot demo" />
+	</definition>
+
+</tiles-definitions>

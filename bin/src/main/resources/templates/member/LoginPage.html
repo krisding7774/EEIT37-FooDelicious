@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" >
+	
+<style type="text/css">
+	#mainDiv{
+		border: 1px black solid;
+		padding: 20px;
+		border-radius: 10px;
+		
+	}
+	#passwordDiv{
+		margin-bottom: 10px;
+	}
+	
+	.errorMsg{
+		color: red;
+	}
+
+</style>
+
+</head>
+<body>
+	
+	<div class="container" id="mainDiv">
+	<h1>Login</h1>
+	<form action="checklogin.controller" method="post">
+		<div class="form-floating mb-3">
+			<input type="text" class="form-control" id="floatingInput" name="userAccount"
+				placeholder="Account"> <label for="floatingInput">Account</label>
+				<span id="accSpan" class="errorMsg"></span>
+				
+		</div>
+		<div class="form-floating" id="passwordDiv">
+			<input type="password" class="form-control" id="floatingPassword" name="userPwd"
+				placeholder="Password"> <label for="floatingPassword">Password</label>
+				<span id="pwdSpan" class="errorMsg"></span>
+		</div>
+		
+		<button type="submit" class="btn btn-outline-primary">Login</button>
+		<button type="button" class="btn btn-outline-primary"
+		 onclick="location.href='goregister'">Register</button>		 
+		 </form>
+		 <span id="msgSpan" class="errorMsg"></span>
+	</div>
+
+
+	<script	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Option 2: Separate Popper and Bootstrap JS -->
+	
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

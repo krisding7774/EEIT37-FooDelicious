@@ -1,0 +1,58 @@
+.pageMove:hover{
+    background: skyblue;
+    transform: translate(3px,3px);
+}
+
+th{
+    font-size: 18px;
+}
+
+td{
+    font-size: 14px;
+}
+
+table{
+    box-shadow: 2px 5px 15px 5px gray;
+}
+
+.littleName{
+    color: #D3B884;
+}
+
+.readonly{
+
+    background-color: rgb(228, 225, 225);
+}
+
+.keyWord{
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.upInput{
+    width: 80px;
+}
+
+.upInputSm{
+    width: 50px;
+}
+
+.upInputMd{
+    width: 100px;
+}
+
+.upInputBig{
+    width: 120px;
+}
+
+.text-middle{
+    text-align: center;
+}
+
+input{
+    height: 38px;
+}
+
+h1{
+    margin: 20px 0 10px 0;
+}

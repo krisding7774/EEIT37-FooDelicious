@@ -1,0 +1,64 @@
+.pageMove:hover{
+    background: skyblue;
+    transform: translate(3px,3px);
+}
+
+th{
+    font-size: 14px;
+}
+
+td{
+    font-size: 14px;
+}
+
+table{
+    box-shadow: 2px 5px 20px 5px gray;
+}
+
+.littleName{
+    color: #D3B884;
+}
+
+.keyWord{
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.searchArea{
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.searchBox{
+    width: 200px;
+    margin-left: 5px;
+}
+
+.searchBox2{
+    margin-left: 1px;
+}
+
+.selectBox{
+    float: left;
+    width: 150px;
+}
+
+h1{
+    margin: 20px 0 10px 0;
+}
+
+.larW{
+    width: 300px;
+}
+
+.midW{
+    width: 180px;
+}
+
+.smalW{
+    width: 100px;
+}
+
+.detailImg{
+    width: 100px;
+}

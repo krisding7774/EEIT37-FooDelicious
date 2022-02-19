@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+
+}
+
+div.path {
+    background-color: rgb(209, 203, 203);
+}
+
+#rowSelect {
+    margin-top: 30px;
+}
+
+#mainDiv {
+    margin-top: 30px;
+    border: 1px black solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#passwordDiv {
+    margin-bottom: 10px;
+}
+
+#loginSpan {
+    color: red;
+}
+
+#registerMain {
+    margin-top: 30px;
+    border: 1px gray solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.nav-item{
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.item:hover{
+    box-sizing: border-box;
+    background-color: #D3B884;
+    transform: translate(3px,3px);
+}
+
+.navArea{
+    background-color: #F4F4F4;
+    height: 100px;
+    padding-top: 15px;
+}
+
+.textCon{
+    font-size: 26px;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.memberPic{
+    border-radius: 50%;
+    width: 50px;
+
+}
