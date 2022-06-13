@@ -50,15 +50,11 @@ public class OrdersDetailBean implements Serializable {
 		super();
 	}
 
-	public OrdersDetailBean(Long ordersDetailId, Long ordersId, Long product_id, Integer quantity,
-			OrdersBean ordersBean, Product product) {
+	public OrdersDetailBean(Long ordersId, Long product_id, Integer quantity) {
 		super();
-		this.ordersDetailId = ordersDetailId;
 		this.ordersId = ordersId;
 		this.product_id = product_id;
 		this.quantity = quantity;
-		this.ordersBean = ordersBean;
-		this.product = product;
 	}
 
 	public Long getOrdersDetailId() {

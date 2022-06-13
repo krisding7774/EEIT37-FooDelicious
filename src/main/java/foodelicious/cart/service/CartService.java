@@ -9,14 +9,14 @@ public interface CartService {
 
 	CartBean insertAndUpdateItem(CartBean cartBean);
 
-	void deleteItem(Long cartId);
+	List<CartBean> selectItem(Long memberId);
+
+	List<hesitantProduct> hesitantProduct();
 
 	void deleteProduct(Long productId);
 
-	List<CartBean> selectItem(Long memberId);
+	void deleteItem(Long cartId);
 
 	List<CartBean> selectAll();
-
-	List<hesitantProduct> hesitantProduct();
 
 }

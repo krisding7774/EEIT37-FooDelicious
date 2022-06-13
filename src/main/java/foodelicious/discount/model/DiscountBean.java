@@ -12,10 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 import foodelicious.member.model.Member;
 
 @Entity
 @Table(name = "discount")
+@Component
 public class DiscountBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -42,13 +45,11 @@ public class DiscountBean implements Serializable {
 		super();
 	}
 
-	public DiscountBean(Long discountId, Long memberId, String discountName, Integer discountContent, Member member) {
+	public DiscountBean(Long memberId, String discountName, Integer discountContent) {
 		super();
-		this.discountId = discountId;
 		this.memberId = memberId;
 		this.discountName = discountName;
 		this.discountContent = discountContent;
-		this.member = member;
 	}
 
 	public Long getDiscountId() {

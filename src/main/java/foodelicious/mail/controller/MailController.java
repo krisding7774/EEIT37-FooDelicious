@@ -9,13 +9,14 @@ import foodelicious.mail.service.MailService;
 
 @Controller
 public class MailController {
+
 	@Autowired
 	private MailService mailService;
 
 	@GetMapping("/mailto")
 	@ResponseBody
 	public String hello() {
-		mailService.prepareAndSend("請輸入信箱@gmail.com","title" ,"Sample mail subject");
+		mailService.prepareAndSend("請輸入信箱@gmail.com", "title", "Sample mail subject");
 		return "Mail sent";
 	}
 }

@@ -2,8 +2,6 @@ package foodelicious.orders.model;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,9 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 
@@ -60,30 +56,6 @@ public class OrdersBean implements Serializable {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "member_id", insertable = false, updatable = false)
 	private Member member;
-
-	@Transient
-	@OneToMany(mappedBy = "ordersBean")
-	private Set<OrdersDetailBean> orderDetail = new LinkedHashSet<OrdersDetailBean>();
-
-	public OrdersBean() {
-		super();
-	}
-
-	public OrdersBean(Long ordersId, Long memberId, Timestamp ordersDate, String ordersName, String ordersPhone,
-			String orderAddress, String ordersState, Integer ordersTotal, Member member,
-			Set<OrdersDetailBean> orderDetail) {
-		super();
-		this.ordersId = ordersId;
-		this.memberId = memberId;
-		this.ordersDate = ordersDate;
-		this.ordersName = ordersName;
-		this.ordersPhone = ordersPhone;
-		this.ordersAddress = orderAddress;
-		this.ordersState = ordersState;
-		this.ordersTotal = ordersTotal;
-		this.member = member;
-		this.orderDetail = orderDetail;
-	}
 
 	public Long getOrdersId() {
 		return ordersId;
@@ -155,14 +127,6 @@ public class OrdersBean implements Serializable {
 
 	public void setMember(Member member) {
 		this.member = member;
-	}
-
-	public Set<OrdersDetailBean> getOrderDetail() {
-		return orderDetail;
-	}
-
-	public void setOrderDetail(Set<OrdersDetailBean> orderDetail) {
-		this.orderDetail = orderDetail;
 	}
 
 }

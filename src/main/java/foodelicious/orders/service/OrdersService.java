@@ -6,16 +6,16 @@ import foodelicious.orders.model.OrdersBean;
 
 public interface OrdersService {
 
-	OrdersBean insertOrders(OrdersBean ordersBean);
+	List<OrdersBean> selectIdAndStatus(Long ordersId, String ordersState);
 
 	OrdersBean updateOrders(OrdersBean ordersBean);
 
-	OrdersBean selectOrdersId(Long ordersId);
+	OrdersBean insertOrders(OrdersBean ordersBean);
 
 	List<OrdersBean> selectOrders(Long memberId);
 
-	List<OrdersBean> selectAll();
+	OrdersBean selectOrdersId(Long ordersId);
 
-	List<OrdersBean> selectIdAndStatus(Long ordersId, String ordersState);
+	List<OrdersBean> selectAll();
 
 }

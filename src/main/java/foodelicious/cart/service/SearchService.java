@@ -8,10 +8,10 @@ public interface SearchService {
 
 	List<Product> findByProductNameLike(String productName);
 
-	List<Product> findAll();
-
-	Product save(Product product);
+	void updatestock(Integer stock, Long productId);
 
 	Product getHesitantProduct(Long productId);
+
+	List<Product> findAll();
 
 }

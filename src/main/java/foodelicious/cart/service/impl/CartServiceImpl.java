@@ -2,6 +2,7 @@ package foodelicious.cart.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import foodelicious.cart.model.CartBean;
@@ -12,25 +13,12 @@ import foodelicious.cart.service.CartService;
 @Service
 public class CartServiceImpl implements CartService {
 
+	@Autowired
 	private CartRepository cartRepository;
-
-	public CartServiceImpl(CartRepository cartRepository) {
-		this.cartRepository = cartRepository;
-	}
 
 	@Override
 	public CartBean insertAndUpdateItem(CartBean cartBean) {
 		return cartRepository.save(cartBean);
-	}
-
-	@Override
-	public void deleteItem(Long cartId) {
-		cartRepository.deleteById(cartId);
-	}
-
-	@Override
-	public void deleteProduct(Long productId) {
-		cartRepository.deleteByProductId(productId);
 	}
 
 	@Override
@@ -39,13 +27,23 @@ public class CartServiceImpl implements CartService {
 	}
 
 	@Override
-	public List<CartBean> selectAll() {
-		return cartRepository.findAll();
+	public List<hesitantProduct> hesitantProduct() {
+		return cartRepository.hesitantProduct();
 	}
 
 	@Override
-	public List<hesitantProduct> hesitantProduct() {
-		return cartRepository.hesitantProduct();
+	public void deleteProduct(Long productId) {
+		cartRepository.deleteByProductId(productId);
+	}
+
+	@Override
+	public void deleteItem(Long cartId) {
+		cartRepository.deleteById(cartId);
+	}
+
+	@Override
+	public List<CartBean> selectAll() {
+		return cartRepository.findAll();
 	}
 
 }

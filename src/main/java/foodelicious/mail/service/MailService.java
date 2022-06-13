@@ -14,12 +14,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MailService {
 
-	private JavaMailSender mailSender;
-
 	@Autowired
-	public MailService(JavaMailSender mailSender) {
-		this.mailSender = mailSender;
-	}
+	private JavaMailSender mailSender;
 
 	public void forgetPwd(String toEmail, String subject, String body) {
 		SimpleMailMessage message = new SimpleMailMessage();
@@ -52,10 +48,8 @@ public class MailService {
 		};
 		try {
 			mailSender.send(messagePreparator);
-			// System.out.println("sent");
 		} catch (MailException e) {
-			// System.out.println(e);
-			// runtime exception; compiler will not force you to handle it
+			e.printStackTrace();
 		}
 	}
 
@@ -94,8 +88,5 @@ public class MailService {
 		}
 
 	}
-	
-
-	
 
 }

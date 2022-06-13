@@ -2,6 +2,7 @@ package foodelicious.orders.service.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import foodelicious.orders.model.OrdersDetailBean;
@@ -11,12 +12,8 @@ import foodelicious.orders.service.OrdersDetailService;
 @Service
 public class OrdersDetailServiceImpl implements OrdersDetailService {
 
+	@Autowired
 	OrdersDetailRepository ordersDetailRepository;
-
-	public OrdersDetailServiceImpl(OrdersDetailRepository ordersDetailRepository) {
-		super();
-		this.ordersDetailRepository = ordersDetailRepository;
-	}
 
 	@Override
 	public OrdersDetailBean insertOrderDetail(OrdersDetailBean ordersDetailBean) {

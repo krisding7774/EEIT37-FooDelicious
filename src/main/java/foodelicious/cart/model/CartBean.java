@@ -54,20 +54,17 @@ public class CartBean implements Serializable {
 		super();
 	}
 
-	public CartBean(Long cartId, Long memberId, Long productId, Integer quantity, Member member, Product product) {
-		super();
-		this.cartId = cartId;
-		this.memberId = memberId;
-		this.productId = productId;
-		this.quantity = quantity;
-		this.member = member;
-		this.product = product;
-	}
-
 	public CartBean(Integer quantity, Product product) {
 		super();
 		this.quantity = quantity;
 		this.product = product;
+	}
+
+	public CartBean(Long memberId, Long productId, Integer quantity) {
+		super();
+		this.memberId = memberId;
+		this.productId = productId;
+		this.quantity = quantity;
 	}
 
 	public Long getCartId() {
@@ -116,12 +113,6 @@ public class CartBean implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
-	}
-
-	@Override
-	public String toString() {
-		return "CartBean [cartId=" + cartId + ", memberId=" + memberId + ", productId=" + productId + ", quantity="
-				+ quantity + ", member=" + member + ", product=" + product + "]";
 	}
 
 }
