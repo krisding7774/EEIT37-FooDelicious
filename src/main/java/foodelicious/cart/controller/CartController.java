@@ -22,6 +22,7 @@ import foodelicious.cart.service.CartService;
 import foodelicious.cart.service.SearchService;
 import foodelicious.discount.model.DiscountBean;
 import foodelicious.discount.service.DiscountService;
+import foodelicious.member.service.MemberService;
 import foodelicious.orders.model.OrdersBean;
 import foodelicious.product.model.Product;
 
@@ -38,6 +39,9 @@ public class CartController {
 	private SearchService searchService;
 
 	@Autowired
+	private MemberService memberService;
+
+	@Autowired
 	private DiscountService discountService;
 
 	@GetMapping("/shoppingCart")
@@ -46,18 +50,9 @@ public class CartController {
 
 		if (userId != null) {
 			List<CartBean> carts = cartService.selectItem(userId);
-
-			Integer count = 0;
-
-			for (Integer i = 0; i < carts.size(); i++) {
-				count++;
-			}
-
 			session.setAttribute("carts", carts);
-			session.setAttribute("count", count);
 			session.setAttribute("coin", getGoldCoin());
 			session.setAttribute("priceTotal", originTotal());
-
 			return "app.ShoppingCart";
 		} else {
 			return "app.LoginSystem";
@@ -90,13 +85,11 @@ public class CartController {
 					sum = product.getProductStock();
 					return "已經到達庫存最大數量了(目前庫存共有 " + product.getProductStock() + " 件)";
 				}
-
 				cart.setCartId(cart.getCartId());
 				cart.setMemberId(cart.getMemberId());
 				cart.setProductId(cart.getProductId());
 				cart.setQuantity(sum);
 				cartService.insertAndUpdateItem(cart);
-
 				same = true;
 				break;
 			}
@@ -156,14 +149,18 @@ public class CartController {
 
 		OrdersBean ordersBean = new OrdersBean();
 
+		Integer count = 0;
+
 		for (CartBean cart : carts) {
 			ordersBean.setMemberId(cart.getMemberId());
 			ordersBean.setOrdersName(cart.getMember().getMemberName());
 			ordersBean.setOrdersPhone(cart.getMember().getMemberPhone());
 			ordersBean.setOrdersAddress(cart.getMember().getMemberAddress());
+			count++;
 		}
 
 		session.setAttribute("orders", ordersBean);
+		session.setAttribute("count", count);
 		return "app.Orders";
 	}
 
@@ -215,19 +212,10 @@ public class CartController {
 			}
 		}
 
-		if (currentCoin != 0) {
-			discountContent += currentCoin;
-		}
+		discountContent = currentCoin != 0 ? discountContent + currentCoin : discountContent;
 
 		session.setAttribute("discountContent", discountContent);
 		return discountContent;
-	}
-
-	@ResponseBody
-	@GetMapping("/searchProduct/{name}")
-	public List<Product> searchProduct(@PathVariable(name = "name") String productName) {
-		List<Product> productPolymers = searchService.findByProductNameLike("%" + productName + "%");
-		return productPolymers;
 	}
 
 	@ResponseBody
@@ -237,36 +225,28 @@ public class CartController {
 		return "TK888";
 	}
 
+	@ResponseBody
+	@GetMapping("/searchProduct/{name}")
+	public List<Product> searchProduct(@PathVariable(name = "name") String productName) {
+		return searchService.findByProductNameLike("%" + productName + "%");
+	}
+
 //	顯示初始金額
 	public Integer originTotal() {
 		List<CartBean> carts = cartService.selectItem((Long) session.getAttribute("userID"));
 		Integer originTotal = 0;
 
 		for (CartBean cart : carts) {
-			Product product = cart.getProduct();
-			originTotal += product.getProductPrice() * cart.getQuantity();
+			originTotal += cart.getProduct().getProductPrice() * cart.getQuantity();
 		}
 
-		if (originTotal < 1000) {
-			originTotal += 100;
-		}
-
-		return originTotal;
+		return originTotal < 1000 ? originTotal + 100 : originTotal;
 	}
 
 //	獲取使用者的金幣
 	public Integer getGoldCoin() {
 		Long userId = (Long) session.getAttribute("userID");
-		Integer coin = 0;
-
-		if (userId != null) {
-			List<CartBean> carts = cartService.selectItem(userId);
-			for (CartBean cart : carts) {
-				coin = cart.getMember().getMemberCoin();
-			}
-		}
-
-		return coin;
+		return userId != null ? memberService.findByMemberId(userId).getMemberCoin() : 0;
 	}
 
 }
