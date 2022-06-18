@@ -16,7 +16,7 @@ public interface CartRepository extends JpaRepository<CartBean, Long> {
 
 	void deleteByProductId(Long productId);
 
-	@Query(value = "SELECT product_id, SUM(quantity) AS quantity FROM shopping_cart GROUP BY product_id", nativeQuery = true)
+	@Query(value = "SELECT product_id, SUM(quantity) AS quantity FROM shopping_cart GROUP BY product_id ORDER BY quantity DESC", nativeQuery = true)
 	List<hesitantProduct> hesitantProduct();
 
 }
