@@ -3,11 +3,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <link href="${contextRoot}/css/bootstrap.min.css" rel="stylesheet" />
 <link href="css/cart.css" rel="stylesheet">
@@ -16,17 +13,13 @@
 <meta charset="UTF-8">
 <title>FooDelicious</title>
 <link href="../../css/default4.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-	
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">	
 </head>
 
 <body>
-
 <header class="navArea">
-
 		<nav class="container-fluid navbar fixed-top navbar-expand-lg navbar-light bg-lightd-grid gap-3 align-items-center navArea" style="grid-template-columns: 1fr 2fr;">
 			<a class="navbar-brand textCon itembox" href="${contextRoot}/">好煮意</a>
-
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item itembox"><a class="nav-link textCon" aria-current="page" href="/" style="color: black">首頁</a></li>
@@ -107,8 +100,8 @@
 	<br />
 	<br />
 	<br />
-	<h1 id="center">訂單完成！已將訂單資訊寄至您的信箱</h1>
-	<h1 style="text-align: center">或至<a href="/memberIndex">會員中心</a>查詢訂單</h1>
+	<h1 id="center">訂單完成！</h1>
+	<h1 style="text-align: center">請至<a href="/memberIndex">會員中心</a>查詢訂單</h1>
 	<br />
 	<br />
 	<br />
@@ -134,7 +127,5 @@
 	<script src="form-validation.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
 </body>
-
 </html>

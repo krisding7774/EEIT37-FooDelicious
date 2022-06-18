@@ -3,26 +3,20 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <head>
-
 <link rel="stylesheet" href="../../../css/backendAge.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-
 </head>
 
 <body>
-	<h1 class="tableName titleName2">猶豫商品 <br> <span class="littleName">Hesitant Products</span>
-	</h1>
-
+	<h1 class="tableName titleName2">猶豫商品 <br> <span class="littleName">Hesitant Products</span></h1>
+	
 	<div class="reportArea">
-
 		<div id="report1" class="col-sm-5">
 			<canvas id="myChart"></canvas>
 		</div>
-
 		<div id="report2" class="col-sm-5">
 			<canvas id="myChart2"></canvas>
 		</div>
-
 	</div>
 
 	<div id="textArea" class="col-sm-11" style="text-align: center">
@@ -42,7 +36,5 @@
 	</div>
 
 	<script src="../../js/hesitantProduct.js"></script>
-
 </body>
-
 </html>

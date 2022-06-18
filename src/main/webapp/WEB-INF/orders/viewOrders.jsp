@@ -1,21 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <head>
-
 <link rel="stylesheet" href="../../../css/backendOrder.css">
 <link rel="stylesheet" href="../../css/backend.css">
 <link href="../../css/bootstrap.min.css" rel="stylesheet">
 <link href="../../fontawesome/css/all.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500&display=swap" rel="stylesheet">
 <script src="../../js/jquery-3.6.0.min.js"></script>
-
 </head>
 
 <body>
-
 	<h1 class="tableName titleName2">會員訂單列表 <br> <span class="littleName">Order List</span>
 	</h1>
 	<ul id="selectPage" class="nav nav-tabs">
@@ -70,7 +66,6 @@
 					</div>
 				</div>
 			</div>
-
 			<nav aria-label="Page navigation example ">
 				<ul id="page" class="pagination justify-content-center"></ul>
 			</nav>
@@ -79,6 +74,4 @@
 
 	<script src="../../js/viewOrders.js"></script>
 	<script src="../../js/bootstrap.min.js"></script>
-
 </body>
-

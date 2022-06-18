@@ -1,3 +1,4 @@
+// 秀出購物車產品
 function showItem() {
 	$.ajax({
 		url: "/shoppingCart/show",
@@ -26,13 +27,14 @@ function showItem() {
 	})
 }
 
+// 將產品加入購物車
 function addToCart(productId) {
 	var quantity = $("#pdQty").val();
-	var postData = { "pid": productId, "qty": quantity };
+	var postData = { "pid": productId, "qty": quantity }; // 用JSON格式做成JavaScript物件
 	$.ajax({
 		url: "/shoppingCart/insert",
 		type: "POST",
-		data: JSON.stringify(postData),
+		data: JSON.stringify(postData), // 轉成純文字送到後端
 		contentType: "application/json; charset=utf-8",
 		success: function() {
 			showItem();
@@ -40,21 +42,24 @@ function addToCart(productId) {
 	})
 }
 
+// 更新購物車數量
 function changeNum(productId, quantity) {
 	$.ajax({
 		url: "/shoppingCart/" + productId + "/" + quantity,
-		type: "PUT",
+		type: "GET",
 		success: function() {
 			showItem();
 		}
 	})
 }
 
+// 刪除購物車產品
 function deleteItem(productId) {
 	$.ajax({
 		url: "/shoppingCart/" + productId,
 		type: "DELETE",
 		success: function() {
+//			SweetAlert2的模板
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',
@@ -75,6 +80,7 @@ function deleteItem(productId) {
 	})
 }
 
+// 減少折扣金幣
 function minusNum() {
 	var coin = $("#goldCoin").val();
 	coin--;
@@ -85,6 +91,7 @@ function minusNum() {
 	discountTotal();
 }
 
+// 增加折扣金幣
 function addNum() {
 	var coin = $("#goldCoin").val();
 	var limit = $("#hiddenCoin").val();
@@ -100,6 +107,7 @@ $("#button-addon1").click(function() {
 	discountTotal();
 })
 
+// 折扣後金額
 function discountTotal() {
 	var discounts = $("#discount").val();
 	var coin = $("#goldCoin").val();
@@ -129,6 +137,7 @@ function discountTotal() {
 	})
 }
 
+// 折扣金額
 function discountMoney(discounts, coin) {
 	$.ajax({
 		url: "/getContent/" + discounts + "/" + coin,
@@ -139,6 +148,7 @@ function discountMoney(discounts, coin) {
 	})
 }
 
+// 領取折價券
 function insertDis() {
 	$.ajax({
 		url: "/shoppingCart/insertDis",
@@ -154,6 +164,7 @@ function insertDis() {
 	})
 }
 
+// 右上角模糊查詢
 function searchProduct() {
 	var name = $("#appleNoSale").val();
 	if (name != null) {

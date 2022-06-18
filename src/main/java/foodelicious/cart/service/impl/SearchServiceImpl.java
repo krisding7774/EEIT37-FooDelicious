@@ -25,7 +25,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
-	public void updatestock(Integer stock, Long productId) {
+	public void updateStock(Integer stock, Long productId) {
 		jdbcTemplate.update("UPDATE productNum SET product_stock = ? WHERE product_id = ?", stock, productId);
 	}
 

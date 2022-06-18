@@ -3,11 +3,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
 <link href="${contextRoot}/css/bootstrap.min.css" rel="stylesheet" />
 <link href="css/cart.css" rel="stylesheet">
@@ -16,17 +13,13 @@
 <meta charset="UTF-8">
 <title>FooDelicious</title>
 <link href="../../css/default4.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-	
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">	
 </head>
 
 <body>
-
 <header class="navArea">
-
 		<nav class="container-fluid navbar fixed-top navbar-expand-lg navbar-light bg-lightd-grid gap-3 align-items-center navArea" style="grid-template-columns: 1fr 2fr;">
 			<a class="navbar-brand textCon itembox" href="${contextRoot}/">好煮意</a>
-
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item itembox"><a class="nav-link textCon" aria-current="page" href="/" style="color: black">首頁</a></li>
@@ -62,32 +55,8 @@
 		<nav class="navbar navbar-light bg-light">
 			<div class="container-fluid">
 				<a class="navbar-brand"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg> 好煮意｜訂單資料填寫</a>
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" id="appleNoSale" placeholder="蘋果，沒有打折！！" aria-label="Search" value="">
-					<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="searchProduct()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
-				</form>
 			</div>
 		</nav>
-	</div>
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog modal-lg row justify-content-start">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h3>明智的選擇！</h3>
-				</div>
-				<div class="modal-body">
-					<table class="table align-middle table-striped table-hover">
-						<tbody class="productInformation">
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<table class="table table align-middle">
@@ -166,7 +135,7 @@
 
 					<hr class="my-4">
 					
-					<button type="button" onclick="oneClick()">一鍵輸入</button>
+					<!-- <button type="button" onclick="oneClick()">一鍵輸入</button> -->
 
 					<button class="w-100 btn btn-info btn-lg checkout" type="button">去買單！</button>
 				</form>
@@ -194,7 +163,5 @@
 	<script src="form-validation.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
 </body>
-
 </html>

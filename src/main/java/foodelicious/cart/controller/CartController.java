@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -64,16 +63,18 @@ public class CartController {
 	public String insertItem(@RequestBody String jS) {
 		Long userId = (Long) session.getAttribute("userID");
 
+//		將JSON字串轉換成物件，方便從中獲取產品資料。
 		JSONObject obj = JSON.parseObject(jS);
 		Long productId = Long.parseLong(String.valueOf(obj.get("pid")));
 		Integer quantity = Integer.parseInt(String.valueOf(obj.get("qty")));
 
+//		如果使用者沒有登入，無法進入購物車中。
 		if (userId == null) {
 			return "{\"ans\":\"請先登入會員!!\"}";
 		}
 
 //		判斷購物車是否有重複商品
-		Boolean same = false;
+		Boolean repeat = false;
 
 		List<CartBean> carts = cartService.selectItem(userId);
 
@@ -90,12 +91,12 @@ public class CartController {
 				cart.setProductId(cart.getProductId());
 				cart.setQuantity(sum);
 				cartService.insertAndUpdateItem(cart);
-				same = true;
+				repeat = true;
 				break;
 			}
 		}
 
-		if (same != true) {
+		if (repeat != true) {
 			cartService.insertAndUpdateItem(new CartBean(userId, productId, quantity));
 		}
 
@@ -116,7 +117,7 @@ public class CartController {
 	}
 
 	@ResponseBody
-	@PutMapping("/shoppingCart/{productId}/{quantity}")
+	@GetMapping("/shoppingCart/{productId}/{quantity}")
 	public void updateItem(@PathVariable Long productId, @PathVariable Integer quantity) {
 		List<CartBean> carts = cartService.selectItem((Long) session.getAttribute("userID"));
 

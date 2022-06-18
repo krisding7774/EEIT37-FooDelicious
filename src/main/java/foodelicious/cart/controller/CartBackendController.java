@@ -25,7 +25,9 @@ public class CartBackendController {
 	public List<CartBean> findAll() {
 		List<hesitantProduct> carts = cartService.hesitantProduct();
 
-		return carts.stream().map(cart -> new CartBean(cart.getQuantity(),
+//		將hesitantProduct轉換成cart物件
+		return carts.stream()
+				.map(cart -> new CartBean(cart.getQuantity(),
 						searchService.getHesitantProduct(Long.parseLong(cart.getProduct_id()))))
 				.collect(Collectors.toList());
 	}

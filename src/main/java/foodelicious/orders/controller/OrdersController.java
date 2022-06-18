@@ -1,7 +1,6 @@
 package foodelicious.orders.controller;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -18,9 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import foodelicious.cart.model.CartBean;
 import foodelicious.cart.service.CartService;
 import foodelicious.cart.service.SearchService;
-import foodelicious.mail.service.MailService;
-import foodelicious.member.model.Member;
-import foodelicious.member.service.MemberService;
 import foodelicious.orders.model.OrdersBean;
 import foodelicious.orders.model.OrdersDetailBean;
 import foodelicious.orders.service.OrdersDetailService;
@@ -37,16 +33,10 @@ public class OrdersController {
 	private CartService cartService;
 
 	@Autowired
-	private MailService mailService;
-
-	@Autowired
 	private OrdersService ordersService;
 
 	@Autowired
 	private SearchService searchService;
-
-	@Autowired
-	private MemberService memberService;
 
 	@Autowired
 	private OrdersDetailService ordersDetailService;
@@ -72,25 +62,16 @@ public class OrdersController {
 		ordersService.insertOrders(ordersBean);
 
 		for (CartBean cart : carts) {
-			ordersDetailService.insertOrderDetail(new OrdersDetailBean(ordersBean.getOrdersId(), cart.getProductId(), cart.getQuantity()));
+			ordersDetailService.insertOrderDetail(
+					new OrdersDetailBean(ordersBean.getOrdersId(), cart.getProductId(), cart.getQuantity()));
 			for (Product product : products) {
 				if (cart.getProductId() == product.getProductId()) {
-					searchService.updatestock(product.getProductStock() - cart.getQuantity(), product.getProductId());
+					searchService.updateStock(product.getProductStock() - cart.getQuantity(), product.getProductId());
 				}
 			}
 			cartService.deleteItem(cart.getCartId());
 			session.removeAttribute("discountContent");
 		}
-
-		Member member = memberService.findByMemberId(userId);
-		String memberName = member.getMemberName();
-		String memberMail = member.getMemberMail();
-		String url = "http://localhost:8080/memberOrders";
-		SimpleDateFormat dateFormatAll = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		mailService.prepareAndSend(memberMail, "[FooDelicious]\t" + dateFormatAll.format(timeStamp) + "\t已收到您的訂單",
-				"親愛的" + memberName + "先生/小姐，感謝您的訂單！\n以下是您的訂單資訊：\n收件人姓名：" + ordersBean.getOrdersName() + "\n收件人電話："
-						+ ordersBean.getOrdersPhone() + "\n寄貨地址：" + orders.getOrdersAddress() + "\n訂單金額：NT$:"
-						+ ordersBean.getOrdersTotal() + "元\n前往查看訂單詳細資訊：" + url);
 	}
 
 	@ResponseBody

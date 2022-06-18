@@ -1,6 +1,7 @@
 $(".checkout").on("click", function() {
+	if ($("#flexRadioDefault1").is(":checked")) {
 
-	if ($("#flexRadioDefault1").is(":checked")) {	// 金流服務請寫在else
+		//	判斷是否有填寫收件人資訊
 		if ($("#name").val().length == 0) {
 			$(".validate1").removeClass("d-none");
 		} else if ($("#phone").val().length == 0) {
@@ -9,20 +10,23 @@ $(".checkout").on("click", function() {
 			$(".validate3").removeClass("d-none");
 		}
 
+		//	判斷是否有填寫收件人資訊
 		if ($("#name").val().length == 0 && $("#phone").val().length == 0 && $("#address").val().length == 0) {
 			$(".validate1").removeClass("d-none");
 			$(".validate2").removeClass("d-none");
 			$(".validate3").removeClass("d-none");
 		}
 
+		//	判斷有填寫收件人資訊才可以進行結單動作
 		if ($("#name").val().length != 0 && $("#phone").val().length != 0 && $("#address").val().length != 0) {
 
-			var orders = {
+			var orders = { // 用JSON格式做成JavaScript物件
 				ordersName: $("#name").val(),
 				ordersPhone: $("#phone").val(),
 				ordersAddress: $("#address").val(),
 			}
 
+			// 	SweetAlert2模板
 			let timerInterval
 			Swal.fire({
 				title: '請稍後!!',
@@ -50,7 +54,7 @@ $(".checkout").on("click", function() {
 				url: "/orders/insert",
 				type: "POST",
 				contentType: "application/json;charset=utf-8;",
-				data: JSON.stringify(orders),
+				data: JSON.stringify(orders), // 轉成純文字送到後端
 				success: function() {
 					window.location.href = "/ordersEnd"
 				}
@@ -58,10 +62,10 @@ $(".checkout").on("click", function() {
 		}
 	} else {
 		window.location.href = "/CashflowList";
-		//		window.location.href = "/Ecpay";
 	}
 })
 
+// 前往訂單明細頁
 function goDetail(ordersId) {
 	$.ajax({
 		url: "/toOrderDetailPage/" + ordersId,
@@ -72,7 +76,8 @@ function goDetail(ordersId) {
 	})
 }
 
-function oneClick(){
+// 一鍵輸入
+function oneClick() {
 	$("#name").val("Ace哥");
 	$("#phone").val("0960072527");
 	$("#address").val("桃園市龍潭區經華路444號(透天厝)");
