@@ -57,7 +57,7 @@ function changeNum(productId, quantity) {
 function deleteItem(productId) {
 	$.ajax({
 		url: "/shoppingCart/" + productId,
-		type: "DELETE",
+		type: "GET",
 		success: function() {
 //			SweetAlert2的模板
 			const Toast = Swal.mixin({

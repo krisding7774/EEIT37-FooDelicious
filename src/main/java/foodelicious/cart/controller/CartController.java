@@ -6,7 +6,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -104,7 +103,7 @@ public class CartController {
 	}
 
 	@ResponseBody
-	@DeleteMapping("/shoppingCart/{productId}")
+	@GetMapping("/shoppingCart/{productId}")
 	public void deleteItem(@PathVariable Long productId) {
 		List<CartBean> carts = cartService.selectItem((Long) session.getAttribute("userID"));
 
@@ -150,6 +149,7 @@ public class CartController {
 
 		OrdersBean ordersBean = new OrdersBean();
 
+//		計算購物車商品數量
 		Integer count = 0;
 
 		for (CartBean cart : carts) {

@@ -38,11 +38,13 @@ public class OrdersDetailBean implements Serializable {
 	@Column(name = "quantity")
 	private Integer quantity;
 
-	@ManyToOne(cascade = CascadeType.MERGE)
+//	建立訂單多對一以及設定不能插入、更新表格
+	@ManyToOne(cascade = CascadeType.MERGE) // 合併參考物件
 	@JoinColumn(name = "orders_id", insertable = false, updatable = false)
 	private OrdersBean ordersBean;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+//	建立user多對一並設定不能插入、更新表格
+	@ManyToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
 	@JoinColumn(name = "product_id", insertable = false, updatable = false)
 	private Product product;
 

@@ -35,7 +35,7 @@ public class OrdersBean implements Serializable {
 	private Long memberId;
 
 	@Column(name = "orders_date")
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8") // 設定時間格式以及時區
 	private Timestamp ordersDate;
 
 	@Column(name = "orders_name")
@@ -53,7 +53,8 @@ public class OrdersBean implements Serializable {
 	@Column(name = "orders_total")
 	private Integer ordersTotal;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+//	建立user多對一並設定不能插入、更新表格
+	@ManyToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
 	@JoinColumn(name = "member_id", insertable = false, updatable = false)
 	private Member member;
 
