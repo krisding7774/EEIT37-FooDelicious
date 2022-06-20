@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -53,8 +53,8 @@ public class OrdersBean implements Serializable {
 	@Column(name = "orders_total")
 	private Integer ordersTotal;
 
-//	建立user多對一並設定不能插入、更新表格
-	@ManyToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
+//	建立user一對一並設定不能插入、更新表格
+	@OneToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
 	@JoinColumn(name = "member_id", insertable = false, updatable = false)
 	private Member member;
 

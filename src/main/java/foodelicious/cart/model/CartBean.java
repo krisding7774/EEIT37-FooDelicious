@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
@@ -38,12 +39,12 @@ public class CartBean implements Serializable {
 	@Column(name = "quantity")
 	private Integer quantity;
 
-//	建立user多對一並設定不能插入、更新表格
-	@ManyToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
+//	建立user一對一並設定不能插入、更新表格
+	@OneToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
 	@JoinColumn(name = "member_id", insertable = false, updatable = false)
 	private Member member;
 
-//	建立product多對一並設定不能插入、更新表格
+//	建立product多對一 ex.一個購物車可以有多個產品 (簡單判斷法：外來鍵在哪邊哪邊就是多方)並設定不能插入、更新表格
 	@ManyToOne(fetch = FetchType.EAGER) // 立即從表格取得資料
 	@JoinColumn(name = "product_id", insertable = false, updatable = false)
 	private Product product;
