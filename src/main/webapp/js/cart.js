@@ -1,9 +1,9 @@
 // 秀出購物車產品
 function showItem() {
 	$.ajax({
-		url: "/shoppingCart/show",
-		type: "GET",
-		contentType: "application/json; charset=utf-8",
+		url: "/shoppingCart/show", // 要請求資料的網址
+		type: "GET", // 請求資料的方式
+		contentType: "application/json; charset=utf-8", // 請求資料的類型
 		success: function(carts) {
 			if (carts != null) {
 				$("#cartList").empty();
@@ -34,7 +34,7 @@ function addToCart(productId) {
 	$.ajax({
 		url: "/shoppingCart/insert",
 		type: "POST",
-		data: JSON.stringify(postData), // 轉成純文字送到後端
+		data: JSON.stringify(postData), // 轉成純文字送到後端 
 		contentType: "application/json; charset=utf-8",
 		success: function() {
 			showItem();
